@@ -1,0 +1,12 @@
+services:
+  angular-app:
+    build: .
+    container_name: angular-container
+    volumes:
+      - .:/usr/src/app  # Mounts your local directory to the container
+    working_dir: /usr/src/app
+    ports:
+      - "4200:4200"  # Map container's port 4200 to your local machine's port 4200
+    stdin_open: true
+    tty: true
+    #command: ["ng", "serve", "--host", "0.0.0.0", "--disable-host-check"]
